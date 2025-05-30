@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Xử lý mảng 2 chiều</title>
+</head>
+<body>
+    <h2>Xử lý mảng 2 chiều</h2>
+    <p>Mảng: [[1, 3, 4], [3, 4, 5], [5, 5, 6]]</p>
+    <button onclick="handleArray()">Chạy chương trình</button>
+
+    <pre id="output"></pre>
+
+    <script>
+        function handleArray() {
+            let arr = [
+                [1, 3, 4],
+                [3, 4, 5],
+                [5, 5, 6]
+            ];
+
+            let output = "";
+
+            // Bài 1: Tổng các phần tử toàn mảng
+            let totalSum = 0;
+            for (let row of arr) {
+                for (let val of row) {
+                    totalSum += val;
+                }
+            }
+            output += "Bài 1 - Tổng tất cả phần tử: " + totalSum + "\n\n";
+
+            // Bài 2: Tổng các phần tử từng hàng
+            output += "Bài 2 - Tổng từng hàng:\n";
+            for (let i = 0; i < arr.length; i++) {
+                let rowSum = arr[i].reduce((a, b) => a + b, 0);
+                output += `Hàng ${i + 1}: ${rowSum}\n`;
+            }
+            output += "\n";
+
+            // Bài 3: Phần tử lớn nhất của từng hàng
+            output += "Bài 3 - Phần tử lớn nhất từng hàng:\n";
+            for (let i = 0; i < arr.length; i++) {
+                let maxInRow = Math.max(...arr[i]);
+                output += `Hàng ${i + 1}: ${maxInRow}\n`;
+            }
+            output += "\n";
+
+            // Bài 4: Tìm phần tử lớn nhất trên đường chéo chính
+            let maxDiagonal = arr[0][0]; // giả sử ma trận vuông
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i][i] > maxDiagonal) {
+                    maxDiagonal = arr[i][i];
+                }
+            }
+            output += "Bài 4 - Phần tử lớn nhất trên đường chéo chính: " + maxDiagonal;
+
+            // Hiển thị kết quả
+            document.getElementById("output").innerText = output;
+        }
+    </script>
+</body>
+</html>

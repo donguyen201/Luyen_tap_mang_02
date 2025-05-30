@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đảo Ngược Ký Tự</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Đảo Ngược Mảng Ký Tự</h2>
+    <p>Mảng ban đầu: <span id="originalArray">['c', 's', 'c', '2', '6', '1']</span></p>
+    <button onclick="reverseArray()">Đảo ngược</button>
+    <p>Mảng sau khi đảo ngược: <span id="reversedArray"></span></p>
+
+    <script>
+        function reverseArray() {
+            let arr = ['c', 's', 'c', '2', '6', '1'];
+            let reversed = arr.reverse().join("");
+            document.getElementById("reversedArray").innerText = reversed;
+        }
+    </script>
+</body>
+</html>

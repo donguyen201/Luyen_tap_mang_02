@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay thế ký tự</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input {
+            padding: 5px;
+            width: 300px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Thay thế ký tự '-' bằng '_'</h2>
+    <p>Nhập một chuỗi ký tự:</p>
+    <input type="text" id="charArray" placeholder="Nhập chuỗi có dấu '-'">
+    <br>
+    <button onclick="replaceHyphen()">Thay thế</button>
+    <p>Kết quả: <span id="result"></span></p>
+
+    <script>
+        function replaceHyphen() {
+            let inputStr = document.getElementById("charArray").value;
+            let replacedStr = inputStr.replace(/-/g, "_");
+            document.getElementById("result").innerText = replacedStr;
+        }
+    </script>
+</body>
+</html>

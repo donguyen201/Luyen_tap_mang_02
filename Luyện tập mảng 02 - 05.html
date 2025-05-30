@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So sánh hai chuỗi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input {
+            padding: 5px;
+            width: 300px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>So sánh hai chuỗi</h2>
+    <p>Nhập chuỗi thứ nhất:</p>
+    <input type="text" id="string1" placeholder="Nhập chuỗi 1">
+    <p>Nhập chuỗi thứ hai:</p>
+    <input type="text" id="string2" placeholder="Nhập chuỗi 2">
+    <br>
+    <button onclick="compareStrings()">So sánh</button>
+    <p>Kết quả: <span id="result"></span></p>
+
+    <script>
+        function compareStrings() {
+            let str1 = document.getElementById("string1").value;
+            let str2 = document.getElementById("string2").value;
+            
+            if (str1 === str2) {
+                document.getElementById("result").innerText = "Hai chuỗi giống nhau.";
+            } else {
+                document.getElementById("result").innerText = "Hai chuỗi khác nhau.";
+            }
+        }
+    </script>
+</body>
+</html>

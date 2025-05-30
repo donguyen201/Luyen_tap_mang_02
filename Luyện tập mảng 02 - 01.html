@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị Mảng 2 Chiều</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        pre {
+            text-align: left;
+            display: inline-block;
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hiển thị Mảng 2 Chiều</h2>
+    <pre id="output"></pre>
+    
+    <script>
+        let a = [
+            [1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]
+        ];
+        
+        let output = "";
+        for (let i = 0; i < a.length; i++) {
+            output += `row ${i}\n`;
+            for (let j = 0; j < a[i].length; j++) {
+                output += ` ${a[i][j]}\n`;
+            }
+        }
+        
+        document.getElementById("output").innerText = output;
+    </script>
+</body>
+</html>

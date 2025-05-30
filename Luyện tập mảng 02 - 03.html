@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm ký tự số trong mảng</title>
+</head>
+<body>
+    <h2>Đếm số ký tự là số (0-9) trong mảng</h2>
+    <p id="arrayDisplay"></p>
+    <p id="result"></p>
+
+    <script>
+        // Khai báo mảng ký tự
+        let array = ['a', '1', 'b', '9', 'c', '3', '!', '7', 'd', '0'];
+
+        // Hiển thị mảng ra màn hình
+        document.getElementById("arrayDisplay").innerText = "Mảng: " + JSON.stringify(array);
+
+        // Khai báo biến đếm
+        let count = 0;
+
+        // Duyệt qua từng phần tử trong mảng
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] >= '0' && array[i] <= '9') {
+                count++;
+            }
+        }
+
+        // Hiển thị kết quả
+        document.getElementById("result").innerText = "Số ký tự là số trong mảng là: " + count;
+    </script>
+</body>
+</html>
