@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Faking Textarea</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ddd;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h2 {
+      font-weight: bold;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      font-size: 16px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>[*Bài tập] Ứng dụng vui Faking Textarea on Typing</h2>
+
+  <p><strong>Type anything slowly</strong></p>
+  <textarea id="fakeInput" placeholder="Gõ vào đây..."></textarea>
+
+  <p><strong>Mô tả chức năng:</strong><br>
+    Khi người dùng gõ bàn phím thì một dòng chữ cố định sẽ lần lượt hiện ra. Cho dù người dùng gõ chữ nào thì cũng lần lượt hiện ra dòng chữ cố định đó.
+  </p>
+
+  <script>
+    const fixedText = "Bạn đang gõ một nội dung giả định rất thú vị!";
+    let currentIndex = 0;
+
+    const textarea = document.getElementById("fakeInput");
+
+    textarea.addEventListener("keydown", function(event) {
+      event.preventDefault(); // Ngăn không cho nhập thật
+      if (currentIndex < fixedText.length) {
+        textarea.value += fixedText[currentIndex];
+        currentIndex++;
+      }
+    });
+  </script>
+
+</body>
+</html>
